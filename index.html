@@ -37,23 +37,24 @@
        ========================================== */
     .top-nav {
       position: fixed;
-      top: 100;
-      left:44%;
-      width: 12%;
-      border-radius:40px;
-      padding: 1.5rem 3rem;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.75rem 2rem;
+      border-radius: 40px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       z-index: 100;
       backdrop-filter: blur(10px);
-      background:  rgba(15, 23, 42, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      white-space: nowrap;
     }
 
     .nav-logo {
       font-weight: 800;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       letter-spacing: -0.02em;
       color: #fff;
       text-decoration: none;
@@ -94,7 +95,7 @@
 
     .dial-arc {
       position: absolute;
-      top: 20;
+      top: 20px;
       right: 80px;
       width: 180px;
       height: 390px;
@@ -110,7 +111,7 @@
       align-items: center;
       justify-content: flex-end;
       text-decoration: none;
-      transition: all 0.35 cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     /* Arc Positions */
@@ -196,7 +197,7 @@
        4. SECTION BASE & ANIMATIONS
        ========================================== */
     .section-page {
-      height: 100vh;
+      min-height: 100vh;
       width: 100vw;
       scroll-snap-align: start;
       scroll-snap-stop: always;
@@ -204,7 +205,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 6rem 2rem 2rem 2rem;
+      padding: 6rem 2rem 4rem 2rem;
       position: relative;
       overflow: hidden;
     }
@@ -258,6 +259,15 @@
       line-height: 1.1;
     }
 
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(180deg, #ffffff 0%, #c7d2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .glass-card {
       background: rgba(255, 255, 255, 0.07);
       backdrop-filter: blur(16px);
@@ -267,6 +277,7 @@
       padding: 2rem;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      word-break: break-word;
     }
 
     .glass-card:hover {
@@ -285,21 +296,19 @@
        5. SECTION PALETTES
        ========================================== */
     #home {
-      /* Set the image URL */
-  background-image: 
-linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920');
-
-  /* Ensure the image covers the full screen nicely */
-  background-size: cover;          /* Resizes the image to fit the screen */
-  background-position: center;     /* Centers the image */
-  background-repeat: no-repeat;    /* Prevents image repeating/tiling */
-  background-attachment: fixed;
-  
-
+      background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     #research {
-      background: linear-gradient(rgba(30, 30, 30, 0.5)), url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1920](https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1920');
+      background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1920');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
     #research .glow-orb {
       width: 500px; height: 500px;
@@ -309,7 +318,11 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
     #research .section-tag { color: #6ee7b7; }
 
     #conferences {
-      background: linear-gradient(rgba(30, 30, 30, 0.2)),url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1920](https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1920');
+      background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1920');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
     #conferences .glow-orb {
       width: 500px; height: 500px;
@@ -375,18 +388,22 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
     }
 
     /* ==========================================
-       MOBILE RESPONSIVENESS OVERRIDES
+       6. MOBILE RESPONSIVENESS OVERRIDES
        ========================================== */
     @media (max-width: 820px) {
       
-      /* Prevent content clipping & overlap on phone screens */
+      /* Disable snap lock on mobile to allow smooth multi-card scrolling */
+      html {
+        scroll-snap-type: none;
+      }
+
       .section-page {
         height: auto !important;
         min-height: 100vh;
         padding: 6rem 1.25rem 4rem 1.25rem;
+        scroll-snap-align: none;
       }
 
-      /* Scale down headers so text doesn't overflow */
       .hero-title {
         font-size: 2.25rem !important;
         line-height: 1.2;
@@ -397,7 +414,6 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
         margin-bottom: 1.25rem;
       }
 
-      /* Stack cards neatly in 1 column */
       .card-grid {
         grid-template-columns: 1fr !important;
         gap: 1rem;
@@ -407,20 +423,14 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
         padding: 1.25rem;
       }
 
-      /* Adjust top bar spacing */
       .top-nav {
-        padding: 1rem 1.25rem;
+        top: 1rem;
+        padding: 0.6rem 1.5rem;
       }
 
-      .nav-links {
-        display: none;
-      }
-
-      /* Hide camera dial on small screens to save space */
       .camera-dial-container {
         display: none !important;
       }
-    }
     }
   </style>
 </head>
@@ -428,10 +438,7 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
 
   <!-- TOP NAVIGATION BAR -->
   <nav class="top-nav">
-
-
     <a href="#home" class="nav-logo">PORTFOLIO.</a>
-    
   </nav>
 
   <!-- CAMERA ZOOM SEMI-CIRCULAR DIAL -->
@@ -496,8 +503,6 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
           <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">
             Designing energy-efficient neural network architectures optimized for embedded biomedical hardware.
           </p>
-	</div>
-
         </div>
       </div>
     </div>
@@ -556,23 +561,25 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
       <h2 class="section-title">Contact Information</h2>
       <div class="card-grid">
         <div class="glass-card">
-          <h3 style="font-size: 1.3rem;">Personal Email</h3>
-          <p style="color: #fecdd3; font-weight: 600; margin-bottom: 0.5rem;">✉️ purvikalyani.prasannah@gmail.com </p>
-         <a href="mailto:purvikalyani.prasannah@gmail.com" class="btn btn-glow" style="margin-top: 0;">Send an Email</a>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Personal Email</h3>
+          <p style="color: #fecdd3; font-weight: 600; margin-bottom: 1rem;">✉️ purvikalyani.prasannah@gmail.com</p>
+          <a href="mailto:purvikalyani.prasannah@gmail.com" class="btn btn-glow" style="margin-top: 0;">Send an Email</a>
         </div>
-	<div class="glass-card">
-          <h3 style="font-size: 1.3rem;">Krea Email</h3>
-          <p style="color: #fecdd3; font-weight: 600; margin-bottom: 0.5rem;">✉️ purvikalyani_prasannah.sias23@krea.ac.in </p>
-         <a href="mailto:purvikalyani_prasannah.sias23@krea.ac.in" class="btn btn-glow" style="margin-top: 0;">Send an Email</a>
-	</div>
-	<div class="glass-card">
-          <h3 style="font-size: 1.3rem;">Contact Number</h3>
-          <p style="color: #fecdd3; font-weight: 600; margin-bottom: 0.5rem;">📞9535263839 </p>
-         <a href="tel:9535263839" class="btn btn-glow" style="margin-top: 0;">Give a Call</a>
-	</div>
-	<div class="glass-card">
-          <h3 style="font-size: 1.3rem;">Other</h3>
-         <a href="https://www.linkedin.com/in/purvikalyani-prasannah-181aa626a/" class="btn btn-glow" style="margin-top: 0;">LinkedIn</a>
+        <div class="glass-card">
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Krea Email</h3>
+          <p style="color: #fecdd3; font-weight: 600; margin-bottom: 1rem;">✉️ purvikalyani_prasannah.sias23@krea.ac.in</p>
+          <a href="mailto:purvikalyani_prasannah.sias23@krea.ac.in" class="btn btn-glow" style="margin-top: 0;">Send an Email</a>
+        </div>
+        <div class="glass-card">
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Contact Number</h3>
+          <p style="color: #fecdd3; font-weight: 600; margin-bottom: 1rem;">📞 9535263839</p>
+          <a href="tel:9535263839" class="btn btn-glow" style="margin-top: 0;">Give a Call</a>
+        </div>
+        <div class="glass-card">
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Other</h3>
+          <p style="color: #fecdd3; font-weight: 600; margin-bottom: 1rem;">Connect on social</p>
+          <a href="https://www.linkedin.com/in/purvikalyani-prasannah-181aa626a/" target="_blank" class="btn btn-glow" style="margin-top: 0;">LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
@@ -585,7 +592,7 @@ linear-gradient(rgba(30, 30, 30, 0.5), rgba(30,30,30,0.5)),url('https://images.u
 
       const observerOptions = {
         root: null,
-        threshold: 0.6 // Triggers when 60% of the section is visible
+        threshold: 0.5
       };
 
       const observer = new IntersectionObserver((entries) => {
