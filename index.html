@@ -47,8 +47,8 @@
       align-items: center;
       z-index: 100;
       backdrop-filter: blur(10px);
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(15, 23, 42, 0);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       white-space: nowrap;
     }
 
@@ -386,17 +386,51 @@
       html { scroll-snap-type: none; }
       .section-page { height: auto; min-height: 100vh; padding: 6rem 1.25rem 4rem 1.25rem; }
       .horizontal-wrapper { flex-direction: column; overflow-x: visible; }
-      .horizontal-slide { min-width: 100%; padding: 1.5rem 0; }
+      .horizontal-slide { min-width: 100vw; padding: 1.5rem 0; }
       .camera-dial-container { display: none !important; }
     }
+/* ==========================================
+   LEFT SEMI-CIRCULAR HERO IMAGE FRAME
+   ========================================== */
+.hero-image-container {
+  position: absolute;
+  left: -80px; /* Tucks half of the circle off screen to create a semi-circle edge */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 320px;
+  z-index: 2;
+  pointer-events: none; /* Prevents blocking clicks on elements beneath */
+}
+
+.hero-image-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 8px; /* Gap for the glowing border */
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.5), rgba(255, 255, 255, 0.1));
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* Hide or adjust frame on mobile screens */
+@media (max-width: 1024px) {
+  .hero-image-container {
+    display: none !important;
+  }
+}
   </style>
 </head>
 <body>
-
-  <!-- TOP NAVIGATION BAR -->
-  <nav class="top-nav">
-    <a href="#home" class="nav-logo">PORTFOLIO.</a>
-  </nav>
 
   <!-- CAMERA DIAL -->
   <aside class="camera-dial-container" aria-label="Page navigation dial">
@@ -410,6 +444,12 @@
 
   <!-- PAGE 1: HOME -->
   <section id="home" class="section-page">
+    <div class="hero-image-container">
+    <div class="hero-image-frame">
+      <!-- Replace the src URL below with your actual image file path or URL -->
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQEwVUzF8UNBxQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728493270975?e=1790812800&v=beta&t=B5JF9wggLM3BLeLStTi60TfT-cVeN-q069j3np6bRi8" alt="Profile Picture">
+    </div>
+    </div>
     <div class="glow-orb"></div>
     <div class="content-box" style="text-align: center;">
       <p class="section-tag">Curriculum Vitae</p>
